@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090807">
+  <meta name="description" content="Barbería Los Tilines: cortes modernos, estilo y atención personalizada.">
+  <title>Los Tilines | Luxury Barber Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./inicio.css?v=royal1">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="./inicio.html" aria-label="Los Tilines, inicio">
+      <img src="./img/logo%20tilines.jpg" alt="Logo Barbería Los Tilines">
+      <span><strong>LOS TILINES</strong><small>LUXURY BARBER SHOP</small></span>
+    </a>
+
+    <div class="welcome">Bienvenido, <strong id="userName">Cliente</strong></div>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="./tipos%20de%20corte.html">Tipos de corte</a>
+      <a href="./productos.html">Productos</a>
+      <a href="./asesoramiento.html">Asesoramiento</a>
+      <a class="nav-cta" href="./cuestionario.html">Reservar cita</a>
+      <button type="button" id="logoutButton" class="logout-btn">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> ESTILO · PRECISIÓN · DISTINCIÓN <span></span></div>
+        <h1>EL ARTE DE<br><em>VERSE BIEN</em></h1>
+        <p>Más que un corte, una experiencia. Encuentra el estilo que representa tu personalidad en Barbería Los Tilines.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#catalogo">DESCUBRIR CORTES <b>↗</b></a>
+          <a class="button button-outline" href="./cuestionario.html">RESERVAR CITA</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>ESTILO</strong><small>Tu identidad</small></div>
+          <i></i>
+          <div><strong>DETALLE</strong><small>Trabajo preciso</small></div>
+          <i></i>
+          <div><strong>ROYAL</strong><small>Tu experiencia</small></div>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <div class="crest"><span>♛</span><small>LT</small></div>
+        <p>THE ART OF<br><b>GROOMING</b></p>
+      </div>
+      <div class="hero-bottom"></div>
+    </section>
+
+    <section class="intro section-wrap">
+      <div class="eyebrow centered"><span></span> NUESTRA ESENCIA <span></span></div>
+      <h2>ELEGANCIA EN CADA <em>DETALLE</em></h2>
+      <p>En Los Tilines creemos que cada detalle importa. Descubre cortes modernos, atención personalizada y una experiencia pensada para destacar tu estilo.</p>
+    </section>
+
+    <section class="video-section section-wrap">
+      <div class="section-heading">
+        <span class="kicker">CONOCE NUESTRO TRABAJO</span>
+        <h2>BIENVENIDO A <em>LOS TILINES</em></h2>
+      </div>
+      <div class="video-frame">
+        <video controls muted playsinline preload="metadata" poster="./img/barber.jpg">
+          <source src="./videos/barber%20project.mp4" type="video/mp4">
+          Tu navegador no soporta videos HTML5.
+        </video>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <span class="kicker">NUESTRO CATÁLOGO</span>
+          <h2>CORTES <em>ESTRELLA</em></h2>
+          <p>Encuentra el estilo perfecto para ti. Calidad y precisión en cada corte.</p>
+        </div>
+
+        <div class="catalog-grid">
+          <article class="cut-card" data-tipo="fade" data-precio="25">
+            <div class="cut-image"><img src="./img/low.webp" alt="Corte Fade" loading="lazy"><span class="cut-number">01</span><span class="cut-tag">POPULAR</span></div>
+            <div class="cut-info"><small>CLÁSICO MODERNO</small><h3>Corte Fade</h3><p>Un degradado limpio y moderno para destacar tu imagen.</p><div class="price"><del>S/ 35.00</del><strong>S/ 25.00</strong></div><a class="reserve-link" href="./cuestionario.html?servicio=Corte%20Fade%20%2B%20Barba">RESERVAR AHORA <b>↗</b></a></div>
+          </article>
+
+          <article class="cut-card" data-tipo="pompadour" data-precio="20">
+            <div class="cut-image"><img src="./img/poumpadour.jpg" alt="Corte Pompadour" loading="lazy"><span class="cut-number">02</span></div>
+            <div class="cut-info"><small>ELEGANCIA Y VOLUMEN</small><h3>Corte Pompadour</h3><p>Volumen, definición y personalidad para un acabado distinguido.</p><div class="price"><del>S/ 25.00</del><strong>S/ 20.00</strong></div><a class="reserve-link" href="./cuestionario.html?servicio=Corte%20Pompadour%20%2B%20Hidrataci%C3%B3n">RESERVAR AHORA <b>↗</b></a></div>
+          </article>
+
+          <article class="cut-card" data-tipo="undercut" data-precio="25">
+            <div class="cut-image"><img src="./img/taper.jpg" alt="Taper Fade con texturizado" loading="lazy"><span class="cut-number">03</span><span class="cut-tag">TENDENCIA</span></div>
+            <div class="cut-info"><small>ESTILO URBANO</small><h3>Taper Fade + Texturizado</h3><p>Un degradado sutil con textura y acabado profesional.</p><div class="price"><del>S/ 30.00</del><strong>S/ 25.00</strong></div><a class="reserve-link" href="./cuestionario.html?servicio=Taper%20Fade%20%2B%20Texturizado">RESERVAR AHORA <b>↗</b></a></div>
+          </article>
+
+          <article class="cut-card" data-tipo="buzz" data-precio="35">
+            <div class="cut-image"><img src="./img/buzz.avif" alt="Buzz Cut" loading="lazy"><span class="cut-number">04</span></div>
+            <div class="cut-info"><small>SENCILLO Y DEFINIDO</small><h3>Buzz Cut + Asesoramiento</h3><p>Un estilo minimalista con acabado uniforme y personalidad.</p><div class="price"><del>S/ 50.00</del><strong>S/ 35.00</strong></div><a class="reserve-link" href="./cuestionario.html?servicio=Buzz%20Cut%20%2B%20Afeitado">RESERVAR AHORA <b>↗</b></a></div>
+          </article>
+
+          <article class="cut-card featured-card" data-tipo="especial" data-precio="0">
+            <div class="cut-image"><img src="./img/ney%C3%A7.jpg" alt="Borrón y Cuenta Nueva" loading="lazy"><span class="cut-number">05</span><span class="cut-tag">ESPECIAL</span></div>
+            <div class="cut-info"><small>RENUEVA TU IMAGEN</small><h3>Borrón y Cuenta Nueva</h3><p>Atrévete a cambiar y descubre una nueva versión de tu estilo.</p><div class="price"><del>Gratis</del><strong>Promoción especial</strong></div><a class="reserve-link" href="./cuestionario.html?servicio=Cambio%20radical">RESERVAR AHORA <b>↗</b></a></div>
+          </article>
+
+          <article class="cut-card" data-tipo="burst" data-precio="20">
+            <div class="cut-image"><img src="./img/burst.jpg" alt="Burst Fade" loading="lazy"><span class="cut-number">06</span></div>
+            <div class="cut-info"><small>DEGRADADO DINÁMICO</small><h3>Burst Fade + Afeitado</h3><p>Un acabado moderno que resalta los laterales y la silueta.</p><div class="price"><del>S/ 30.00</del><strong>S/ 20.00</strong></div><a class="reserve-link" href="./cuestionario.html?servicio=Burst%20Fade%20%2B%20Afeitado">RESERVAR AHORA <b>↗</b></a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-banner">
+      <span class="kicker">TU ESTILO COMIENZA AQUÍ</span>
+      <h2>TU IMAGEN MERECE <em>LO MEJOR</em></h2>
+      <p>Reserva tu próxima experiencia en Barbería Los Tilines.</p>
+      <a class="button button-gold" href="./cuestionario.html">RESERVAR MI CITA <b>↗</b></a>
+    </section>
+  </main>
+
+  <button class="chat-bubble" id="chatToggle" type="button" aria-label="Abrir formulario de consultas" aria-expanded="false">✉</button>
+  <section class="chat-panel" id="chatPopup" aria-hidden="true">
+    <div class="chat-head"><div><span class="online-dot"></span><strong>Atención Los Tilines</strong><small>Déjanos tu consulta</small></div><button type="button" id="chatClose" aria-label="Cerrar">×</button></div>
+    <form action="https://formsubmit.co/los.tilines.barberos@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Nueva consulta - Barbería Los Tilines">
+      <input type="hidden" name="_captcha" value="false">
+      <label for="consultaNombre">Nombre</label><input id="consultaNombre" name="nombre" type="text" autocomplete="name" required>
+      <label for="consultaCorreo">Correo</label><input id="consultaCorreo" name="correo" type="email" autocomplete="email" required>
+      <label for="consultaTelefono">Teléfono</label><input id="consultaTelefono" name="telefono" type="tel" autocomplete="tel" required>
+      <label for="consultaTexto">Consulta</label><textarea id="consultaTexto" name="consulta" rows="3" required></textarea>
+      <button class="chat-submit" type="submit">ENVIAR CONSULTA ↗</button>
+    </form>
+    <p class="chat-foot">LOS TILINES · LUXURY BARBER SHOP</p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-about"><img src="./img/logo%20tilines.jpg" alt="Logo Los Tilines"><h3>LOS TILINES</h3><small>LUXURY BARBER SHOP</small><p>Estilo, precisión y elegancia en cada detalle.</p></div>
+      <div><h4>NAVEGACIÓN</h4><a href="./tipos%20de%20corte.html">Tipos de corte</a><a href="./productos.html">Productos</a><a href="./asesoramiento.html">Asesoramiento</a><a href="./cuestionario.html">Reservar cita</a></div>
+      <div><h4>ENCUÉNTRANOS</h4><a href="https://wa.me/986132499" target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="https://www.tiktok.com/@barber_tilines" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://www.instagram.com/barber_tilines" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.google.com/maps/place/Barber%C3%ADa+Til%C3%ADn/" target="_blank" rel="noopener noreferrer">Ubicación</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 BARBERÍA LOS TILINES. TODOS LOS DERECHOS RESERVADOS.</span><span>CRAFTED WITH STYLE ♛</span></div>
+  </footer>
+
+  <script>
+    const chatToggle = document.getElementById("chatToggle");
+    const chatPopup = document.getElementById("chatPopup");
+    const chatClose = document.getElementById("chatClose");
+    function setChat(open) {
+      chatPopup.classList.toggle("is-open", open);
+      chatPopup.setAttribute("aria-hidden", String(!open));
+      chatToggle.setAttribute("aria-expanded", String(open));
+    }
+    chatToggle.addEventListener("click", () => setChat(!chatPopup.classList.contains("is-open")));
+    chatClose.addEventListener("click", () => setChat(false));
+    document.addEventListener("keydown", e => { if (e.key === "Escape") setChat(false); });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    menuToggle.addEventListener("click", () => {
+      const open = mainNav.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+    });
+  </script>
+
+  <script src="./index.js"></script>
+  <script type="module" src="./inicio-auth.js"></script>
+</body>
+</html>

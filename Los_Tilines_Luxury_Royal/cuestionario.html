@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserva - LOS TILINES BARBEROS</title>
+  <link rel="stylesheet" href="/cuestionario.css">
+  <!-- CDN para íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<!-- Burbuja flotante de atención -->
+<div class="chat-bubble" onclick="toggleChat()">💬</div>
+
+<!-- Ventana emergente -->
+<div class="chat-popup" id="chatPopup">
+  <h4>¿Necesitas ayuda?</h4>
+  <p>Hola, ¿en qué podemos ayudarte? Contáctanos por WhatsApp o deja tu consulta.</p>
+  <a href="https://wa.me/986132499" target="_blank">📲 Escribir por WhatsApp</a><br><br>
+  <button class="close-btn" onclick="toggleChat()">Cerrar</button>
+</div>
+
+<!-- Estilos de la burbuja -->
+
+<style>
+  .chat-bubble {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background-color: #00bcd4;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .chat-bubble:hover {
+    background-color: #0097a7;
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .chat-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    right: 110px;
+    transform: translateY(-50%);
+    width: 300px;
+    background: #2b2b3c;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in-out;
+    color: #fff;
+  }
+
+  .chat-popup h4 {
+    margin-top: 0;
+    color: #00e0ff;
+  }
+
+  .chat-popup p {
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  .chat-popup a {
+    color: #00e0ff;
+    text-decoration: none;
+  }
+
+  .chat-popup a:hover {
+    text-decoration: underline;
+  }
+
+  .close-btn {
+    background: #00bcd4;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    float: right;
+  }
+
+  .close-btn:hover {
+    background: #0097a7;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-40%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
+  }
+</style>
+
+
+<!-- Script -->
+<script>
+  function toggleChat() {
+    const popup = document.getElementById("chatPopup");
+    popup.style.display = popup.style.display === "block" ? "none" : "block";
+  }
+</script>
+
+<header>
+  <img src="/img/logo tilines.jpg" alt="Logo Barbería Los Tilines" width="80">
+  <nav>
+    <ul>
+      <li><a href="/index.html">INICIO</a></li>
+      <hr>
+      <li><a href="/tipos de corte.html">Tipos de Corte</a></li>
+      <hr>
+      <li><a href="/productos.html">Productos</a></li>
+      <hr>
+      <li><a href="/asesoramiento.html">Asesoramiento</a></li>
+      <hr>
+      <li><a href="/cuestionario.html">Reservar Cita</a></li>
+      <hr>
+    </ul>
+  </nav>
+</header>
+
+<h1>Reserva en Barbería "Los Tilines":</h1>
+
+<body>
+  <main>
+    <div class="form-container">
+      <h2>Reserva tu Cita</h2>
+      <form id="reserva-form" action="https://formsubmit.co/los.tilines.barberos@gmail.com" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="email" name="correo" placeholder="Correo electrónico" required>
+        <input type="date" name="fecha" required>
+        <input type="time" name="hora" required>
+        <input type="text" id="servicioSeleccionado" name="servicio" placeholder="Servicio seleccionado" readonly>
+        <textarea name="nota" placeholder="Notas adicionales"></textarea>
+        <input type="hidden" name="_captcha" value="false">
+        
+        <button type="submit">Reservar</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Barbería - "LOS TILINES". Todos los derechos reservados.</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/barber_tilines" class="social-btn tiktok" target="_blank">
+        <i></i> TikTok
+      </a>
+      <a href="https://www.instagram.com/barber_tilines" class="social-btn instagram" target="_blank">
+        <i></i> Instagram
+      </a>
+      <a href="https://wa.me/986132499" class="social-btn whatsapp" target="_blank">
+        <i></i> WhatsApp
+      </a>
+      <a href="https://www.google.com/maps/place/Barber%C3%ADa+Til%C3%ADn/" class="social-btn maps" target="_blank">
+        <i></i> Ubicación
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Recibe el servicio elegido desde el catálogo de inicio.html.
+    const parametrosReserva = new URLSearchParams(window.location.search);
+    const servicioElegido = parametrosReserva.get("servicio");
+    const campoServicio = document.getElementById("servicioSeleccionado");
+    if (campoServicio && servicioElegido) {
+      campoServicio.value = servicioElegido;
+    }
+  </script>
+  <script src="cuestionario.js"></script>
+</body>
+
+</html>

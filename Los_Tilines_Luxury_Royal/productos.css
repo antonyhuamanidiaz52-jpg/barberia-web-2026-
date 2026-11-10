@@ -1,0 +1,199 @@
+/* Estilos Generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url(/img/barber.jpg);
+  color: #fff;
+  display: flex; /* Usamos flexbox para estructurar el layout */
+  flex-direction: column; /* Hacemos que los elementos vayan en columna */
+  height: 100vh; /* Esto hace que el body ocupe toda la altura de la ventana */
+  justify-content: space-between;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222;
+  padding: 0.5em 1em;
+  height: 80px; /* más corto */
+  border-bottom: 2px solid #444;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  text-align: center;
+  color: #ffefef;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Logo + título juntos */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #f5f5dc;
+  margin-left: 0.5em;
+}
+
+header img {
+  height: 60px;
+  width: auto;
+  margin-right: 0.5em;
+}
+
+
+
+/* Nav */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1em;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f5f5dc;
+}
+
+
+header nav ul li a:hover {
+  color: #d4af37; /* Color dorado al pasar el ratón */
+  text-decoration: underline;
+}
+
+/* Estilos del contenido principal */
+main {
+  padding: 3rem 2rem;
+  flex: 1; /* Esto hace que main ocupe el espacio restante disponible */
+}
+
+.productos {
+  text-align: center;
+}
+
+.productos h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  text-align: center;
+  color: #ffefef;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.producto-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.producto {
+  background-color: #2d2d2d; /* Fondo oscuro sólido para las tarjetas de producto */
+  padding: 1.5rem;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra oscura para destacar */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Efecto más marcado al hacer hover */
+}
+
+.producto img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.producto h3 {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  color: #d4af37; /* Color dorado para los títulos */
+}
+
+.producto p {
+  color: #bbb;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.producto span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.producto button {
+  background-color: #d4af37; /* Dorado para el botón */
+  color: #333;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.producto button:hover {
+  background-color: #b38b26; /* Color dorado más oscuro al hacer hover */
+}
+
+footer {
+  background-color: #222;
+  padding: 1em;
+  text-align: center;
+  border-top: 2px solid #444;
+  margin-top: auto;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.social-icons {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.social-btn:hover {
+  color: blanchedalmond;
+}
