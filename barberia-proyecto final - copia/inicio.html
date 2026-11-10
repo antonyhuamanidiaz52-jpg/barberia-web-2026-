@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#100e0b">
+
+    <title>Barbería "Los Tilines"</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1e1e2f;
+            min-height: 100vh;
+        }
+
+        .chat-bubble {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background-color: #00bcd4;
+            color: #fff;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .chat-bubble:hover {
+            background-color: #0097a7;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .chat-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            right: 110px;
+            transform: translateY(-50%);
+            width: 320px;
+            background: #2b2b3c;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            z-index: 999;
+            animation: fadeIn 0.3s ease-in-out;
+            color: #fff;
+        }
+
+        .chat-popup h4 {
+            margin-top: 0;
+            color: #00e0ff;
+        }
+
+        .chat-popup label {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .chat-popup input,
+        .chat-popup textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: none;
+            background: #444;
+            color: white;
+            font-size: 14px;
+        }
+
+        .chat-popup textarea {
+            resize: vertical;
+        }
+
+        .chat-popup button {
+            margin-top: 15px;
+            background: #00bcd4;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .chat-popup button:hover {
+            background: #0097a7;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-40%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(-50%);
+            }
+        }
+
+        /* Nombre del cliente */
+        .user-welcome {
+            color: #fff;
+            padding: 8px 15px;
+        }
+
+        .user-welcome strong {
+            color: #c9a45c;
+        }
+
+        /* Botón cerrar sesión */
+        #logoutButton {
+            cursor: pointer;
+        }
+
+        #logoutButton:disabled {
+            opacity: 0.6;
+            cursor: wait;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Burbuja de consultas -->
+    <div class="chat-bubble" onclick="toggleChat()">💬</div>
+
+    <!-- Formulario de consultas -->
+    <div class="chat-popup" id="chatPopup">
+
+        <h4>📋 Déjanos tu consulta</h4>
+
+        <form action="https://formsubmit.co/los.tilines.barberos@gmail.com" method="POST">
+
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="consulta">Consulta / Pregunta</label>
+            <textarea id="consulta" name="consulta" rows="3" required></textarea>
+
+            <input type="hidden" name="_captcha" value="false">
+
+            <input type="hidden" name="_next"
+                value="https://formsubmit.co/los.tilines.barberos@gmail.com">
+
+            <button type="submit">Enviar</button>
+
+        </form>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const popup = document.getElementById("chatPopup");
+
+            popup.style.display =
+                popup.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+    <header>
+
+        <img src="/img/logo tilines.jpg"
+            alt="Logo Barbería Los Tilines" width="80">
+
+        <!-- Nombre del cliente autenticado -->
+        <div class="user-welcome">
+            Bienvenido, <strong id="userName">Cliente</strong>
+        </div>
+
+        <nav>
+            <ul>
+
+                <li>
+                    <a href="/tipos de corte.html">Tipos de Corte</a>
+                </li>
+
+                <hr>
+
+                <li>
+                    <a href="/productos.html">Productos</a>
+                </li>
+
+                <hr>
+
+                <li>
+                    <a href="/asesoramiento.html">Asesoramiento</a>
+                </li>
+
+                <hr>
+
+                <li>
+                    <a href="/cuestionario.html">Reservar Cita</a>
+                </li>
+
+                <hr>
+
+                <li>
+                    <button type="button" id="logoutButton">
+                        Cerrar sesión
+                    </button>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <h1>Barbería "Los Tilines"</h1>
+
+    <!-- Video de presentación -->
+    <div class="video-container">
+
+        <video autoplay controls>
+            <source src="/videos/barber project.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+
+    </div>
+
+    <h2 class="titulo-cortes">Nuestros Cortes Estrella</h2>
+
+    <main>
+
+        <section class="catalogo" id="catalogo">
+
+            <!-- Corte Fade -->
+            <article class="tarjeta" data-tipo="fade" data-precio="90">
+
+                <img src="/img/low.webp" alt="Corte Fade">
+
+                <h4>Corte Fade</h4>
+
+                <p class="precio-original">S/ 35.00</p>
+
+                <p class="precio-descuento">S/ 25.00</p>
+
+                <button onclick="reservar('Corte Fade + Barba')">
+                    <a href="/cuestionario.html">Reservar</a>
+                </button>
+
+            </article>
+
+            <!-- Corte Pompadour -->
+            <article class="tarjeta" data-tipo="pompadour" data-precio="72">
+
+                <img src="/img/poumpadour.jpg" alt="Corte Pompadour">
+
+                <h4>Corte Pompadour</h4>
+
+                <p class="precio-original">S/ 25.00</p>
+
+                <p class="precio-descuento">S/ 20.00</p>
+
+                <button onclick="reservar('Corte Pompadour + Hidratación')">
+                    <a href="/cuestionario.html">Reservar</a>
+                </button>
+
+            </article>
+
+            <!-- Taper Fade -->
+            <article class="tarjeta" data-tipo="undercut" data-precio="99">
+
+                <img src="/img/taper.jpg" alt="Taper Fade + Texturizado">
+
+                <h4>Taper Fade + Texturizado</h4>
+
+                <p class="precio-original">S/ 30.00</p>
+
+                <p class="precio-descuento">S/ 25.00</p>
+
+                <button onclick="reservar('Taper Fade + Texturizado')">
+                    <a href="/cuestionario.html">Reservar</a>
+                </button>
+
+            </article>
+
+            <!-- Buzz Cut -->
+            <article class="tarjeta" data-tipo="buzz" data-precio="60">
+
+                <img src="/img/buzz.avif" alt="Buzz Cut + Asesoramiento">
+
+                <h4>Buzz Cut + Asesoramiento Personalizado</h4>
+
+                <p class="precio-original">S/ 50.00</p>
+
+                <p class="precio-descuento">S/ 35.00</p>
+
+                <button onclick="reservar('Buzz Cut + Afeitado')">
+                    <a href="/cuestionario.html">Reservar</a>
+                </button>
+
+            </article>
+
+            <!-- Borrón y Cuenta Nueva -->
+            <article class="tarjeta" data-tipo="especial" data-precio="0">
+
+                <img src="/img/neyç.jpg" alt="Borrón y Cuenta Nueva">
+
+                <h4>Borrón y Cuenta Nueva</h4>
+
+                <p class="precio-original">Gratis</p>
+
+                <p class="precio-descuento">Nosotros te pagamos</p>
+
+                <button onclick="reservar('Cambio radical')">
+                    <a href="/cuestionario.html">Reservar</a>
+                </button>
+
+            </article>
+
+            <!-- Burst Fade -->
+            <article class="tarjeta" data-tipo="burst" data-precio="60">
+
+                <img src="/img/burst.jpg" alt="Burst Fade + Afeitado">
+
+                <h4>Burst Fade + Afeitado</h4>
+
+                <p class="precio-original">S/ 30.00</p>
+
+                <p class="precio-descuento">S/ 20.00</p>
+
+                <button onclick="reservar('Burst Fade + Afeitado')">
+                    <a href="/cuestionario.html">Reservar</a>
+                </button>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>© 2025 Barberia -"LOS TILINES". Todos los derechos reservados.</p>
+
+        <div class="social-icons">
+
+            <a href="https://www.tiktok.com/@barber_tilines"
+                class="social-btn tiktok"
+                target="_blank"
+                rel="noopener noreferrer">
+                <i></i> TikTok
+            </a>
+
+            <a href="https://www.instagram.com/barber_tilines"
+                class="social-btn instagram"
+                target="_blank"
+                rel="noopener noreferrer">
+                <i></i> Instagram
+            </a>
+
+            <a href="https://wa.me/986132499"
+                class="social-btn whatsapp"
+                target="_blank"
+                rel="noopener noreferrer">
+                <i></i> WhatsApp
+            </a>
+
+            <a href="https://www.google.com/maps/place/Barber%C3%ADa+Til%C3%ADn/"
+                class="social-btn maps"
+                target="_blank"
+                rel="noopener noreferrer">
+                <i></i> Ubicación
+            </a>
+
+        </div>
+
+    </footer>
+
+    <!-- JavaScript principal -->
+    <script src="/index.js"></script>
+
+    <!-- Protección y autenticación Firebase -->
+    <script type="module" src="./inicio-auth.js"></script>
+
+</body>
+</html>
